@@ -2,6 +2,8 @@ import mysql from 'mysql';
 import Transport = require('winston-transport');
 import { WinstonMysqlTransportOptions } from './types';
 
+const MESSAGE = Symbol.for('message');
+
 
 export class WinstonMySqlTransport extends Transport {
 
@@ -83,3 +85,11 @@ export class WinstonMySqlTransport extends Transport {
     }
 
 }
+
+
+export const jsonFormatter = (logEntry: any) => {
+    const base = { timestamp: new Date() };
+    const json = Object.assign(base, logEntry);
+    logEntry[MESSAGE] = JSON.stringify(json);
+    return logEntry;
+};
