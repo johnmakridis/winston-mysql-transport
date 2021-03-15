@@ -1,6 +1,6 @@
 {
   "name": "winston-transport-mysql",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": false,
   "description": "MySQL transport for Winston logger",
   "main": "lib/index.js",
