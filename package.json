@@ -1,0 +1,43 @@
+{
+  "name": "winston-transport-mysql",
+  "version": "1.0.0",
+  "private": false,
+  "description": "MySQL transport for Winston logger",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "lint": "tslint -p tsconfig.json",
+    "prebuild": "shx rm -rf lib",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run lint",
+    "preversion": "npm run lint",
+    "version": "git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "author": "John Makridis",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/johnmakridis/winston-mysql-transport"
+  },
+  "keywords": [
+    "winston",
+    "nodejs",
+    "express",
+    "mysql",
+    "winston mysql",
+    "transport"
+  ],
+  "dependencies": {
+    "mysql": "^2.18.1",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "@types/mysql": "^2.15.18",
+    "@types/node": "^10.17.55",
+    "shx": "^0.3.3",
+    "tslint": "^6.1.3",
+    "typescript": "^4.1.5"
+  }
+}
